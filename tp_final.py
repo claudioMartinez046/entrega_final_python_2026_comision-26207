@@ -1,3 +1,6 @@
+from colorama import init
+from colorama import Fore, Back, Style
+init()
 stock = [
     {
         "id": 1,
@@ -35,7 +38,8 @@ def ingreso(nombreDelCampo):
 opcion = "0"
 
 while opcion != "7":
-    print("Bienvenido al sistema")
+    print(Fore.RED + "Bienvenido al sistema")
+    print(Style.RESET_ALL)
     print("""
     1. Agregar producto
     2. Mostrar productos
@@ -80,10 +84,12 @@ while opcion != "7":
             print("")
 
             for item in stock:
+                #se usa comilla simples dentro del f-string para evitar conflicto con las comillas dobles
+                #que delimitan la cadena
                 print(f"Producto: #{item['id']}")#print(f"Producto: #{item["id"]}")
-                print(f"Nombre: {item["nombre"]}")
-                print(f"Categoria: {item["categoria"]}")
-                print(f"Precio: {item["precio"]}")
+                print(f"Nombre: {item['nombre']}")
+                print(f"Categoria: {item['categoria']}")
+                print(f"Precio: {item['precio']}")
                 print("")
 
         case "3":
@@ -96,10 +102,10 @@ while opcion != "7":
 
             for item in stock:
                 if busqueda == item["nombre"]:
-                    print(f"Producto: #{item["id"]}")
-                    print(f"Nombre: {item["nombre"]}")
-                    print(f"Categoria: {item["categoria"]}")
-                    print(f"Precio: {item["precio"]}")
+                    print(f"Producto: #{item['id']}")
+                    print(f"Nombre: {item['nombre']}")
+                    print(f"Categoria: {item['categoria']}")
+                    print(f"Precio: {item['precio']}")
                     print("")
                     encontrado = True
 
@@ -116,10 +122,10 @@ while opcion != "7":
 
             for item in stock:
                 if actualizar == item["nombre"]:
-                    print(f"Producto: #{item["id"]}")
-                    print(f"Nombre: {item["nombre"]}")
-                    print(f"Categoria: {item["categoria"]}")
-                    print(f"Precio: {item["precio"]}")
+                    print(f"Producto: #{item['id']}")
+                    print(f"Nombre: {item['nombre']}")
+                    print(f"Categoria: {item['categoria']}")
+                    print(f"Precio: {item['precio']}")
                     print("")
                     encontrado = True
 
@@ -128,10 +134,10 @@ while opcion != "7":
                     item.update({"nombre":nuevoNombre})
 
                     print("Producto actualizado")
-                    print(f"Producto: #{item["id"]}")
-                    print(f"Nombre: {item["nombre"]}")
-                    print(f"Categoria: {item["categoria"]}")
-                    print(f"Precio: {item["precio"]}")
+                    print(f"Producto: #{item['id']}")
+                    print(f"Nombre: {item['nombre']}")
+                    print(f"Categoria: {item['categoria']}")
+                    print(f"Precio: {item['precio']}")
                     print("")
 
 
@@ -148,10 +154,10 @@ while opcion != "7":
 
             for item in stock:
                 if aEliminar == item["nombre"]:
-                    print(f"Producto: #{item["id"]}")
-                    print(f"Nombre: {item["nombre"]}")
-                    print(f"Categoria: {item["categoria"]}")
-                    print(f"Precio: {item["precio"]}")
+                    print(f"Producto: #{item['id']}")
+                    print(f"Nombre: {item['nombre']}")
+                    print(f"Categoria: {item['categoria']}")
+                    print(f"Precio: {item['precio']}")
                     print("")
                     encontrado = True
 
@@ -174,11 +180,11 @@ while opcion != "7":
             for item in stock:
                 if stockminimo >= item["cantidad"]:
                     print("Producto con stock bajo")
-                    print(f"Producto: #{item["id"]}")
-                    print(f"Nombre: {item["nombre"]}")
-                    print(f"Categoria: {item["categoria"]}")
-                    print(f"Precio: {item["precio"]}")
-                    print(f"Cantidad: {item["cantidad"]}")
+                    print(f"Producto: #{item['id']}")
+                    print(f"Nombre: {item['nombre']}")
+                    print(f"Categoria: {item['categoria']}")
+                    print(f"Precio: {item['precio']}")
+                    print(f"Cantidad: {item['cantidad']}")
                     print("")
                     encontrado = True
 
